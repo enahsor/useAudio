@@ -1,8 +1,8 @@
-import { useCustomHook } from '../../use-custom-hook';
+import { useAudio } from '../../use-Audio';
 
 import { toCamel } from '../lib/util';
 
-import hookConfig from '../../use-custom-hook/package.json';
+import hookConfig from '../../use-Audio/package.json';
 
 export default function Index() {
   const { name, description, repository = {}, author = {} } = hookConfig;
@@ -14,11 +14,9 @@ export default function Index() {
 
   const repositoryUrlDisplay = repositoryExists && repositoryUrl.split('://')[1];
 
-  const hookSettings = {
-    message: 'Hello, custom hook!'
-  }
+  const url = 'https://opengameart.org/sites/default/files/audio_preview/tyhosidragson.ogg.mp3'
 
-  const { message } = useCustomHook(hookSettings);
+  const audio = useAudio(url);
 
   return (
     <main>
@@ -81,34 +79,47 @@ export default function Index() {
             </a>
           </p>
         )}
-
+        <br></br>
         <h2>How to use</h2>
 
         <p>
-          Add your instructions here!
+          useAudio can be used in a similar fashion to the <code>Audio()</code> constructor as it's simply a wrapper around this constructor.
+          
         </p>
+          <br></br>
+        
 
-        <h2>Examples</h2>
+        <code>
 
-        <h3>Set and grab message</h3>
-        <p>
-          <strong>Input:</strong>
-        </p>
+        </code>
+
+        <h3>Getting started</h3>
+        
         <pre>
-          <code>
-{`const hookSettings = {
-  message: 'Hello, custom hook!'
-}
+          <code>{`
+const src = 'https://opengameart.org/sites/default/files/audio_preview/tyhosidragson.ogg.mp3'
+const audio = useAudio(src);`}
+          </code>          
+        </pre>
 
-const { message } = useCustomHook(hookSettings);`}
+        <p>All properties and methods exposed by an instantiation of the <code>Audio()</code> constructor should be available for use.</p>
+        <pre>
+          <code>{
+            `
+<p>Audio source: {audio.src}</p>
+<p>Current time: {audio.currentTime}</p>
+<p>Duration: {audio.duration}</p>
+<button onClick={() => ''}>{audio.playing ? 'Pause': 'Play'}</button>
+            `}           
           </code>
         </pre>
-        <p>
-          <strong>Output:</strong>
-        </p>
-        <p>
-          { message }
-        </p>
+        <br></br>
+        <p>Audio source: {audio.src}</p>
+        <p>Current time: {audio.currentTime}</p>
+        <p>Duration: {audio.duration}</p>
+        <button onClick={() => ''}>{audio.playing ? 'Pause': 'Play'}</button>
+                  
+         
       </section>
 
       <footer>

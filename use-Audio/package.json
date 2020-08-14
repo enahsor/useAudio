@@ -1,11 +1,11 @@
 {
-  "name": "use-custom-hook",
+  "name": "use-Audio",
   "version": "1.0.1",
-  "description": "A starter for creating a new React hook",
+  "description": "A react hook for building audio interfaces easily",
   "author": {
-    "name": "Colby Fayock",
-    "email": "hello@colbyfayock.com",
-    "url": "https://twitter.com/colbyfayock"
+    "name": "Dowen Robinson",
+    "email": "robinsondowen@gmail.com",
+    "url": "https://twitter.com/reactdon"
   },
   "keywords": [
     "react",
@@ -30,9 +30,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/colbyfayock/use-custom-hook"
+    "url": "https://github.com/enahsor/useAudio"
   },
   "bugs": {
-    "url": "https://github.com/colbyfayock/use-custom-hook/issues"
+    "url": "https://github.com/enahsor/useAudio/issues"
   }
 }

@@ -2,17 +2,17 @@
   "private": true,
   "workspaces": [
     "example",
-    "use-custom-hook"
+    "use-Audio"
   ],
   "scripts": {
     "build": "yarn build:hook && yarn build:example",
     "build:example": "yarn workspace example package",
-    "build:hook": "yarn workspace use-custom-hook build",
-    "bump": "yarn workspace use-custom-hook bump",
+    "build:hook": "yarn workspace use-Audio build",
+    "bump": "yarn workspace use-Audio bump",
     "develop": "yarn watch",
     "watch": "concurrently -n Hook,Example \"yarn watch:hook\" \"yarn watch:example\"",
     "watch:example": "yarn workspace example develop",
-    "watch:hook": "yarn workspace use-custom-hook watch",
+    "watch:hook": "yarn workspace use-Audio watch",
     "setup": "node ./scripts/setup.js"
   },
   "devDependencies": {
