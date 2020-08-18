@@ -1,5 +1,5 @@
 {
-  "name": "use-Audio",
+  "name": "useAudio",
   "version": "1.0.1",
   "description": "A react hook for building audio interfaces easily",
   "author": {
