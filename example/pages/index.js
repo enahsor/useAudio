@@ -18,6 +18,10 @@ export default function Index() {
 
   const audio = useAudio(url);
 
+  const handleClick = () => {
+    audio.playing ? audio.pause() : audio.play()
+  }
+
   return (
     <main>
       <style jsx global>{`
@@ -109,7 +113,7 @@ const audio = useAudio(src);`}
 <p>Audio source: {audio.src}</p>
 <p>Current time: {audio.currentTime}</p>
 <p>Duration: {audio.duration}</p>
-<button onClick={() => ''}>{audio.playing ? 'Pause': 'Play'}</button>
+<button onClick={handleClick}>{audio.playing ? 'Pause': 'Play'}</button>
             `}           
           </code>
         </pre>
@@ -117,15 +121,17 @@ const audio = useAudio(src);`}
         <p>Audio source: {audio.src}</p>
         <p>Current time: {audio.currentTime}</p>
         <p>Duration: {audio.duration}</p>
-        <button onClick={() => ''}>{audio.playing ? 'Pause': 'Play'}</button>
+        <button onClick={handleClick}>{audio.playing ? 'Pause': 'Play'}</button>
                   
          
       </section>
 
       <footer>
         <p>
-          Made by <a href={authorUrl}>{ authorName }</a>
+          Made by <a href={authorUrl}>{ authorName }</a> <br></br>
+          [WIP]
         </p>
+        
       </footer>
     </main>
   );
